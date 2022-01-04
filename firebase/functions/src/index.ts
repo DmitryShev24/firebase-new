@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 // https://firebase.google.com/docs/functions/typescript
 
 exports.moderator = functions.database.ref("/books/{Id}").onWrite((change) => {
-  let book = change.after.val();
+  const book = change.after.val();
 
   if (book && !book.description) {
     change.after.ref.update({
