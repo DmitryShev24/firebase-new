@@ -7,7 +7,7 @@ const cors = require("cors")
 const formData = require("express-form-data")
 const admin = require("firebase-admin");
 
-const serviceAccount = require("../path/to/serviceAccountKey.json");
+const serviceAccount = require("../firebase/functions/path/to/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -39,6 +39,7 @@ app.post("/api/books/", async (req, res) => {
 
   res.status(201)
   res.json({book: book, id: book.key})
+
 })
 
 app.put("/api/books/:id", async (req, res) => {
