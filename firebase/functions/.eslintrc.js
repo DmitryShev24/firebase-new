@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-
+    "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
     "google",
@@ -27,5 +27,8 @@ module.exports = {
   rules: {
     "quotes": ["error", "double"],
     "import/no-unresolved": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+
   },
 };
